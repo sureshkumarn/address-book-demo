@@ -1,0 +1,209 @@
+/* Definitions */
+@grey : #333;
+@thin_border : 1px solid @grey;
+@tiny_padding:5px;
+@small_padding:15px;
+@big_padding:25px;
+
+/* reset css */
+body,div,table,td,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p{
+  padding:0;
+  margin:0;
+}
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+h1{
+	border-bottom: @thin_border;
+	padding-bottom: @big_padding;
+}
+ul li{
+	list-style: none;
+	padding:3px;
+}
+.dotted{
+  border:1px dotted #333;
+}
+.field{
+  min-width: 150px;
+  min-height: 25px;
+  max-width: 450px;
+}
+.name-list{
+  
+  min-height: 50px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  float: left;
+  .nlist-header{
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    max-height: 20px;
+    padding: @tiny_padding;
+    a:nth-child(1){
+      float: left;
+    }
+    a:nth-of-type(2){
+      float: right;
+    }
+  }
+  .search{
+    background:#ddd;
+    padding: 5px 20px;
+    input[type=text]{
+      background-color: #fff;
+      width: 100%;
+      text-align: center;
+      border-radius: 3px;
+      border-style: hidden;
+      padding: @tiny_padding;
+    }
+  }
+  .cnt-list{
+    float: left;
+    width: 285px;
+    padding-top: 10px;
+    a{
+      color:#333;
+    }
+    dt, dd{
+      padding: 10px;
+    }
+    dt{
+      background-color: #eee;
+      margin: 0 5px;
+    }
+    dd{
+      margin: 0 5px;
+      border-bottom: 1px solid #eee;
+    }
+  }
+  .cnt-index{
+    padding-top: 10px;
+    max-width: 15px;
+    float: right;
+    text-align: center;
+    list-style: none;
+    li{
+      text-align: center;
+      font-size: 11px;
+      list-style:none;
+      a{
+        background-image: url("/images/disc.png");
+        background-position: center 0;
+        background-repeat: no-repeat;
+        display: block;
+        padding-top: 10px;
+      }
+    }
+  }
+}
+.cnt-detail{
+  max-width: 690px;
+  border: 1px solid #ddd;
+  margin-left: 300px;
+  .cnt-header{
+    border-bottom: 1px solid #ddd;
+    padding: @tiny_padding;
+    text-align: right;
+    background-color: #f8f8f8;
+  }
+  .cnt-info{
+    padding: 25px 0;
+    margin-left: 20px;
+    label{
+      color: #2e7ffc;
+      margin-bottom: 20px;
+    }
+    h2 span.dotted{
+      display: block;
+      margin-top: 3px;
+    }
+    li{
+      border-bottom: 1px solid #eee;
+      padding: 15px 0 10px;
+    }
+    li:last-child{
+      border:none;
+    }
+    li li{
+      border:none;
+      a{
+        float: right;
+        margin: -23px 15px 0 0;
+      }
+    }
+    img{
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+/* Device CSS */
+@media all and (min-width:320px){
+  body{
+    padding: 0;
+    margin:0;
+  }
+  h1{
+    display: none;
+  }
+  .name-list{
+    z-index: 1;
+  }
+  .name-list{
+    width: 100%;
+    .cnt-list{
+      width: 95%;
+    }
+    .cnt-index{
+      width: 5%;
+    }
+  }
+  .cnt-detail{
+    margin-left: 0;
+    z-index: 5;
+    background-color: #fff;
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    .close{
+      display: inline-block;
+      margin-left: 1%;
+      float: left;
+    }
+    .field{
+      width: 100%;
+      max-width: 290px;
+    }
+    .field[data-item=mobile],.field[data-item=home]{
+      max-width: 210px; 
+    }
+  }
+}
+
+@media all and (min-width:680px){
+  .name-list{
+    max-width: 300px;
+  }
+  .cnt-detail {
+    position: relative;
+    margin-left: 300px;
+    max-width: 350px;
+    .close{
+      display: none;
+    }
+  }
+}
+@media all and (min-width:800px){
+  .cnt-detail {
+    max-width: 550px;
+  }
+}
